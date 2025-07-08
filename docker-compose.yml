@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  sp_database:
+    image: postgres
+    restart: always
+    container_name: sp_database
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: skillpulse
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 0B9gcb8UmUkr
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
