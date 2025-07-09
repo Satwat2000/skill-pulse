@@ -8,19 +8,17 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name = "grades", schema = "sp_content")
-public class Grade extends AuditableEntity {
+@Table(name="questions", schema="sp_content")
+public class Question extends AuditableEntity {
+
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="name",nullable = false)
-    private String name;
+    @Column(name="question", nullable = false)
+    private String question;
 
-    @Column(name="code", nullable = false, unique = true)
-    private String code;
-
-    @Column(name="sort",nullable = false)
-    private Integer sort;
+    @Column(name="type", nullable = false)
+    private String type;
 }

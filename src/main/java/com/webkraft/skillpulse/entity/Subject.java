@@ -5,22 +5,24 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name = "grades", schema = "sp_content")
-public class Grade extends AuditableEntity {
+@Table(name="subjects", schema="eds_content")
+public class Subject extends AuditableEntity{
+
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="name",nullable = false)
+    @Column(name="name", nullable = false)
     private String name;
 
-    @Column(name="code", nullable = false, unique = true)
+    @Column(name="code")
     private String code;
 
-    @Column(name="sort",nullable = false)
-    private Integer sort;
+    @Column(name="sort", nullable = false)
+    private int sort;
 }
