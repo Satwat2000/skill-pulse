@@ -96,24 +96,6 @@ Below is the **updated and restructured schema**, incorporating your revised `Re
 ---
 <br><br>
 
-### 📘 Table: `Quiz`
-
-| Column Name  | Type         | Key | Nullable | Description                     |
-| ------------ | ------------ | --- | -------- | ------------------------------- |
-| `uuid`       | UUID         | PK  | No       | Unique quiz identifier          |
-| `questions`  | JSONB / TEXT |     | No       | List of question IDs or objects |
-| `updated_at` | TIMESTAMP    |     | No       |                                 |
-| `created_at` | TIMESTAMP    |     | No       |                                 |
-
-#### 🔗 Relationships
-
-* One-to-Many: `Quiz (1)` → `UserQuiz (many)` via `quiz_id`
-* One-to-Many: `Quiz (1)` → `ResourceMappings` (via `resource_id` and `resource_type='QUIZ'`)
-* One-to-Many: `Quiz (1)` → `Tags` (via `resource_id` and `resource_type='QUIZ'`)
-
----
-<br><br>
-
 ### 📘 Table: `ResourceMappings`
 
 | Column Name     | Type               | Key | Nullable | Description                               |
@@ -170,6 +152,25 @@ Below is the **updated and restructured schema**, incorporating your revised `Re
 
 ---
 <br><br>
+
+### 📘 Table: `Quiz`
+
+| Column Name  | Type         | Key | Nullable | Description                     |
+| ------------ | ------------ | --- | -------- | ------------------------------- |
+| `uuid`       | UUID         | PK  | No       | Unique quiz identifier          |
+| `questions`  | JSONB / TEXT |     | No       | List of question IDs or objects |
+| `updated_at` | TIMESTAMP    |     | No       |                                 |
+| `created_at` | TIMESTAMP    |     | No       |                                 |
+
+#### 🔗 Relationships
+
+* One-to-Many: `Quiz (1)` → `UserQuiz (many)` via `quiz_id`
+* One-to-Many: `Quiz (1)` → `ResourceMappings` (via `resource_id` and `resource_type='QUIZ'`)
+* One-to-Many: `Quiz (1)` → `Tags` (via `resource_id` and `resource_type='QUIZ'`)
+
+---
+<br><br>
+
 
 ### 📘 Table: `UserQuiz`
 
