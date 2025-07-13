@@ -23,11 +23,11 @@ public class ResourceMapping extends AuditableEntity {
     private Long resourceId;
 
     @Column(name = "grade_id", nullable = false)
-    private Grade gradeId;
+    private Long gradeId;
 
     @Column(name = "subject_id", nullable = false)
-    private Subject subjectId;
+    private Long subjectId;
 
     @Column(name = "topic_id", nullable = false)
-    private Topic topicId;
+    private Long topicId;
 }

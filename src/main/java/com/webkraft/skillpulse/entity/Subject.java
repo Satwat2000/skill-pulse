@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name="subjects", schema="eds_content")
+@Table(name="subjects", schema="sp_content")
 public class Subject extends AuditableEntity{
 
     @Column(name="id", nullable = false)
