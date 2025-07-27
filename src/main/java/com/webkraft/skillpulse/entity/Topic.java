@@ -14,11 +14,11 @@ public class Topic extends AuditableEntity {
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name="name", nullable = false)
     private String name;
 
     @Column(name="sort", nullable = false)
-    private Long sort;
+    private Integer sort;
 }

@@ -14,7 +14,7 @@ public class Option extends AuditableEntity {
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name="option_text", nullable = false)
     private String optionText;
@@ -29,5 +29,5 @@ public class Option extends AuditableEntity {
     private Boolean isCorrect;
 
     @Column(name="question_id", nullable = false)
-    private Long questionId;
+    private Integer questionId;
 }

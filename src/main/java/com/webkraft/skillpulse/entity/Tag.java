@@ -14,13 +14,13 @@ public class Tag extends AuditableEntity {
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "resource_type", nullable = false)
     private String resourceType;
 
     @Column(name = "resource_id", nullable = false)
-    private Long resourceId;
+    private Integer resourceId;
 
     @Column(name="type", nullable = false)
     private String type;

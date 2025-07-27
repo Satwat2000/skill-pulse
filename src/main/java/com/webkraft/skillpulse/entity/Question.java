@@ -14,7 +14,7 @@ public class Question extends AuditableEntity {
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name="question", nullable = false)
     private String question;

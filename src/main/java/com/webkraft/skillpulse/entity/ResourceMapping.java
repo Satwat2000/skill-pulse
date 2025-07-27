@@ -14,20 +14,20 @@ public class ResourceMapping extends AuditableEntity {
     @Column(name="id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "resource_type", nullable = false)
     private String resourceType;
 
     @Column(name = "resource_id", nullable = false)
-    private Long resourceId;
+    private Integer resourceId;
 
     @Column(name = "grade_id", nullable = false)
-    private Long gradeId;
+    private Integer gradeId;
 
     @Column(name = "subject_id", nullable = false)
-    private Long subjectId;
+    private Integer subjectId;
 
     @Column(name = "topic_id", nullable = false)
-    private Long topicId;
+    private Integer topicId;
 }

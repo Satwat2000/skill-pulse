@@ -64,6 +64,16 @@ CREATE TABLE sp_content.resource_mappings (
     created_at TIMESTAMP NOT NULL
 );
 
+CREATE TABLE sp_content.question_mappings (
+    id SERIAL PRIMARY KEY,
+    question_id INT NOT NULL,
+    grade_id INT NOT NULL REFERENCES sp_content.grades(id),
+    subject_id INT NOT NULL REFERENCES sp_content.subjects(id),
+    topic_id INT NOT NULL REFERENCES sp_content.topics(id),
+    updated_at TIMESTAMP NOT NULL,
+    created_at TIMESTAMP NOT NULL
+);
+
 CREATE TABLE sp_content.tags (
     id SERIAL PRIMARY KEY,
     resource_type VARCHAR(50) NOT NULL,
@@ -174,13 +184,13 @@ INSERT INTO sp_content.options (option_text, type, is_correct, question_id, upda
 ('New Delhi', 'TEXT', true, 5, now(), now()),
 ('Kolkata', 'TEXT', false, 5, now(), now());
 
--- Resource Mappings
-INSERT INTO sp_content.resource_mappings (resource_type, resource_id, grade_id, subject_id, topic_id, updated_at, created_at) VALUES
-('QUESTION', 1, 2, 1, 1, now(), now()),
-('QUESTION', 2, 2, 1, 1, now(), now()),
-('QUESTION', 3, 2, 3, 3, now(), now()),
-('QUESTION', 4, 2, 2, 2, now(), now()),
-('QUESTION', 5, 2, 4, 4, now(), now());
+-- Question Mappings
+INSERT INTO sp_content.question_mappings (question_id, grade_id, subject_id, topic_id, updated_at, created_at) VALUES
+(1, 2, 1, 1, now(), now()),
+( 2, 2, 1, 1, now(), now()),
+(3, 2, 3, 3, now(), now()),
+(4, 2, 2, 2, now(), now()),
+(5, 2, 4, 4, now(), now());
 
 -- Tags
 INSERT INTO sp_content.tags (resource_type, resource_id, type, value, updated_at, created_at) VALUES
