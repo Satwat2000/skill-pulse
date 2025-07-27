@@ -4,5 +4,5 @@ import com.webkraft.skillpulse.dto.content.QuestionDto;
 import java.util.List;
 
 public interface QuizService {
-    List<QuestionDto> getAllQuestion();
+    List<QuestionDto> getAllQuestion(Integer subjectId, Integer gradeId, Integer topicId);
 }
